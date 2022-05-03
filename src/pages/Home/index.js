@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { APIKey } from "../../config/key";
+import { Link } from "react-router-dom";
 
 import { Container, ListOfMovie, ListItem } from "./styles";
 
-const App = () => {
+const Home = () => {
 
   const [movies, setMovies] = useState([])
   const image_url = 'https://image.tmdb.org/t/p/w500'
@@ -34,9 +35,9 @@ const App = () => {
           {movies.map((movie) => (
 
               <ListItem key={movie.id}>
-                <a href="https://google.com">
+                <Link to={`/details/${movie.id}`}>
                   <img src={`${image_url}${movie.poster_path}`} alt={movie.title} />
-                </a>
+                </Link>
                 <span>{movie.title}</span>
               </ListItem>
 
@@ -49,4 +50,4 @@ const App = () => {
 
 }
 
-export default App
+export default Home
