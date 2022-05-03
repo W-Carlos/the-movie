@@ -1,26 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { APIKey } from "../../config/key";
 
 import { Container, ListOfMovie, ListItem } from "./styles";
 
 const App = () => {
 
-  const movies = [
-    {
-      id: 1,
-      title: 'Injustice',
-      image_url: "https://img.elo7.com.br/product/zoom/2F5195B/poster-impresso-avengers-design.jpg"
-    },
-    {
-      id: 2,
-      title: 'Batman',
-      image_url: "https://img.elo7.com.br/product/zoom/2F5195B/poster-impresso-avengers-design.jpg"
-    },
-    {
-      id: 3,
-      title: 'Spider-Man',
-      image_url: "https://img.elo7.com.br/product/zoom/2F5195B/poster-impresso-avengers-design.jpg"
-    },
-  ]
+  const [movies, setMovies] = useState([])
+  const image_url = 'https://image.tmdb.org/t/p/w500'
+
+  useEffect(() => {
+    // Consumindo a API 
+    async function fetchMovies() {
+      const {data: popularMovies} = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${APIKey}&language=pt-BR&page=1`)
+
+      console.log(popularMovies)
+
+      setMovies(popularMovies.results)
+
+    }
+
+    fetchMovies()
+    
+  }, [movies])
 
   return (
 
@@ -33,7 +35,7 @@ const App = () => {
 
               <ListItem key={movie.id}>
                 <a href="https://google.com">
-                  <img src={movie.image_url} alt={movie.title} />
+                  <img src={`${image_url}${movie.poster_path}`} alt={movie.title} />
                 </a>
                 <span>{movie.title}</span>
               </ListItem>

@@ -33,6 +33,8 @@ export const ListItem = styled.li `
    span {
        font-weight: bold;
        font-size: 130%;
+       text-align: center;
+       margin-bottom: 2rem;
    }
 
    a {
