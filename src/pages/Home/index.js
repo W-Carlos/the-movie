@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { APIKey } from "../../config/key";
 import { Link } from "react-router-dom";
+import Movie from "../../assets/movie.png"
 
-import { Container, ListOfMovie, ListItem } from "./styles";
+import { Container, Header, ListOfMovie, ListItem } from "./styles";
 
 const Home = () => {
 
@@ -28,7 +29,10 @@ const Home = () => {
   return (
 
       <Container>
-        <h1>The Movie</h1>
+        <Header>
+          <img src={Movie} alt="movie-icon" className="movieIcon" />
+          <h1>The Movie</h1>
+        </Header>
 
         <ListOfMovie>
           

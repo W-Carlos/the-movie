@@ -4,8 +4,22 @@ export const Container = styled.div `
 
    h1 {
        text-align: center;
-       margin: 4rem 0;
+       /* margin: 4rem 0; */
    }
+`
+
+export const Header = styled.header `
+    background-color: #F40612;
+    margin-bottom: 4rem;
+
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .movieIcon {
+        width: 60px;
+    }
 `
 
 export const ListOfMovie = styled.ul `

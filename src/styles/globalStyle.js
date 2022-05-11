@@ -26,13 +26,13 @@ const GlobalStyle = createGlobalStyle`
 
         /* Handle */
         ::-webkit-scrollbar-thumb {
-        background: red; 
+        background: #292F36; 
         border-radius: 10px;
         }
 
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
-        background: #b30000; 
+        background: #323942; 
         }
     }
 
