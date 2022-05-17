@@ -5,6 +5,9 @@
 
 <p>A aplicação consome a api do <a href="https://developers.themoviedb.org/3/getting-started/introduction" target="_blank">The Movie Database</a>. Mostra uma página com os filmes mais populares. Ao clicar em um filme, você será direcionado para uma página com alguns detalhes como sinopse e data de lançamento.</p>
 
+>## 📸 Demo
+<img src="./src/assets/the-movie.gif">
+
 >## 🚀 Tecnologias e Ferramentas
 As seguintes ferramentas foram usadas na construção do projeto:
 * <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank">Javascript</a>
